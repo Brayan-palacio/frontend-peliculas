@@ -1,0 +1,612 @@
+.directors-page {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.directors-header {
+  margin-bottom: 32px;
+}
+
+.directors-header .header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.directors-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 0;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.directors-header h2 .icon {
+  color: var(--accent);
+  font-size: 32px;
+}
+
+.directors-header .subtitle {
+  color: var(--text-secondary);
+  font-size: 16px;
+  margin: 4px 0 0 44px;
+}
+
+/* ===== ESTADÍSTICAS ===== */
+.directors-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.directors-stats .stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.directors-stats .stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-border);
+}
+
+.directors-stats .stat-icon {
+  font-size: 28px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-bg);
+  border-radius: 10px;
+}
+
+.directors-stats .stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.directors-stats .stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-h);
+  line-height: 1.2;
+}
+
+.directors-stats .stat-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.directors-container {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ===== FORMULARIO ===== */
+.directors-form-card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: sticky;
+  top: 24px;
+}
+
+.directors-form-card .card-header {
+  padding: 16px 20px;
+  background: var(--accent);
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.directors-form-card .card-header h5 {
+  color: #fff;
+  font-weight: 600;
+  margin: 0;
+  font-size: 18px;
+}
+
+.directors-form-card .card-header .header-icon {
+  font-size: 20px;
+}
+
+.directors-form-card .card-body {
+  padding: 24px;
+}
+
+.directors-form-card .form-group {
+  margin-bottom: 20px;
+}
+
+.directors-form-card .form-group:last-child {
+  margin-bottom: 0;
+}
+
+.directors-form-card label {
+  display: block;
+  color: var(--text-h);
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.directors-form-card label .required {
+  color: #ef4444;
+  margin-left: 4px;
+}
+
+.directors-form-card .form-control {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-input);
+  color: var(--text-h);
+  font-size: 14px;
+  transition: all 0.3s ease;
+  font-family: var(--sans);
+}
+
+.directors-form-card .form-control:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-bg);
+  background: var(--bg);
+}
+
+.directors-form-card .form-control::placeholder {
+  color: var(--text-muted);
+}
+
+.directors-form-card .form-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.directors-form-card .btn-submit {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--sans);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.directors-form-card .btn-submit:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(170, 59, 255, 0.4);
+}
+
+.directors-form-card .btn-submit:active {
+  transform: translateY(0);
+}
+
+.directors-form-card .btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== LISTADO DE DIRECTORES ===== */
+.directors-list-card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.directors-list-card .card-header {
+  padding: 16px 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.directors-list-card .card-header h5 {
+  color: var(--text-h);
+  font-weight: 600;
+  margin: 0;
+  font-size: 18px;
+}
+
+.directors-list-card .card-header .badge-count {
+  background: var(--accent-bg);
+  color: var(--accent);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ===== TABLA ===== */
+.directors-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.directors-table thead {
+  background: var(--bg-secondary);
+  border-bottom: 2px solid var(--border);
+}
+
+.directors-table thead th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-h);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.directors-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s ease;
+}
+
+.directors-table tbody tr:hover {
+  background: var(--accent-bg);
+}
+
+.directors-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.directors-table tbody td {
+  padding: 14px 16px;
+  color: var(--text);
+  vertical-align: middle;
+}
+
+.directors-table .col-index {
+  width: 50px;
+  text-align: center;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.directors-table .col-name {
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+.directors-table .col-name .director-avatar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.directors-table .col-name .avatar-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-bg);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.directors-table .col-status {
+  width: 100px;
+  text-align: center;
+}
+
+.directors-table .col-actions {
+  width: 120px;
+  text-align: center;
+}
+
+/* ===== BADGES DE ESTADO ===== */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.status-badge .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-badge.active {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.status-badge.active .dot {
+  background: #22c55e;
+}
+
+.status-badge.inactive {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.status-badge.inactive .dot {
+  background: #ef4444;
+}
+
+/* ===== BOTONES DE ACCIÓN ===== */
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--sans);
+  text-decoration: none;
+}
+
+.btn-action.btn-edit {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.btn-action.btn-edit:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-action.btn-delete {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.btn-action.btn-delete:hover {
+  background: #ef4444;
+  color: #fff;
+}
+
+.btn-action .action-icon {
+  font-size: 14px;
+}
+
+/* ===== ESTADO VACÍO ===== */
+.empty-directors {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-directors .empty-icon {
+  font-size: 56px;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.empty-directors h4 {
+  color: var(--text-h);
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+
+.empty-directors p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ===== LOADING SPINNER ===== */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.loading-spinner .spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--border);
+  border-top: 4px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-spinner p {
+  margin-top: 12px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .directors-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .directors-form-card {
+    position: static;
+  }
+  
+  .directors-page {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .directors-page {
+    padding: 12px;
+  }
+  
+  .directors-header h2 {
+    font-size: 24px;
+  }
+  
+  .directors-header .subtitle {
+    margin-left: 0;
+  }
+  
+  .directors-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .directors-stats .stat-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .directors-stats .stat-icon {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .directors-stats .stat-value {
+    font-size: 20px;
+  }
+  
+  .directors-table thead th,
+  .directors-table tbody td {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  
+  .directors-table .col-actions {
+    width: 80px;
+  }
+  
+  .btn-action {
+    padding: 2px 8px;
+    font-size: 11px;
+  }
+  
+  .directors-table .col-name .avatar-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .directors-page {
+    padding: 8px;
+  }
+  
+  .directors-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  
+  .directors-table {
+    font-size: 12px;
+  }
+  
+  .directors-table thead th,
+  .directors-table tbody td {
+    padding: 8px 10px;
+  }
+  
+  .directors-table .col-index {
+    width: 30px;
+  }
+  
+  .directors-table .col-status {
+    width: 70px;
+  }
+  
+  .status-badge {
+    font-size: 10px;
+    padding: 2px 10px;
+  }
+  
+  .directors-form-card .card-body {
+    padding: 16px;
+  }
+  
+  .directors-table .col-actions {
+    width: 60px;
+  }
+  
+  .btn-action {
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+  
+  .btn-action .action-icon {
+    font-size: 12px;
+  }
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.directors-container {
+  animation: fadeInUp 0.4s ease;
+}

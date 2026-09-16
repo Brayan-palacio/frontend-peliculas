@@ -1,0 +1,123 @@
+:root {
+  /* === TEXTO === */
+  --text: #6b6375;
+  --text-h: #08060d;
+  --text-secondary: #8a8296;
+  --text-muted: #a8a0b0;
+  
+  /* === FONDOS === */
+  --bg: #ffffff;
+  --bg-secondary: #f8f7fa;
+  --bg-card: #ffffff;
+  --bg-input: #f4f3ec;
+  --bg-hover: rgba(170, 59, 255, 0.05);
+  
+  /* === BORDES === */
+  --border: #e5e4e7;
+  --border-light: #f0eef2;
+  
+  /* === COLORES DE ACENTO === */
+  --accent: #aa3bff;
+  --accent-dark: #8a2be2;
+  --accent-light: #c77dff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  
+  /* === ESTADOS === */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #3b82f6;
+  
+  /* === SOMBRAS === */
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, 
+            rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --shadow-lg: rgba(0, 0, 0, 0.15) 0 20px 25px -5px,
+               rgba(0, 0, 0, 0.1) 0 10px 10px -5px;
+  --shadow-hover: rgba(170, 59, 255, 0.2) 0 20px 30px -10px;
+  
+  /* === TIPOGRAFÍA === */
+  --sans: system-ui, 'Segoe UI', Roboto, -apple-system, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, -apple-system, sans-serif;
+  --mono: ui-monospace, Consolas, 'SF Mono', monospace;
+  
+  /* === TAMAÑOS DE FUENTE === */
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-base: 16px;
+  --font-lg: 20px;
+  --font-xl: 24px;
+  --font-2xl: 32px;
+  --font-3xl: 40px;
+  --font-4xl: 56px;
+  
+  /* === ESPACIADO === */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  
+  /* === BORDES REDONDEADOS === */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+  
+  /* === TRANSICIONES === */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* === Z-INDEX === */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  
+  /* === CONFIGURACIÓN GLOBAL === */
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === TEMA OSCURO === */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --text-secondary: #8a8f9a;
+    --text-muted: #6b7280;
+    
+    --bg: #16171d;
+    --bg-secondary: #1f2028;
+    --bg-card: #1f2028;
+    --bg-input: #2e303a;
+    --bg-hover: rgba(192, 132, 252, 0.08);
+    
+    --border: #2e303a;
+    --border-light: #3a3c48;
+    
+    --accent: #c084fc;
+    --accent-dark: #a855f7;
+    --accent-light: #d8b4fe;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.4);
+    
+    --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px,
+              rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    --shadow-lg: rgba(0, 0, 0, 0.6) 0 20px 25px -5px,
+                 rgba(0, 0, 0, 0.4) 0 10px 10px -5px;
+    --shadow-hover: rgba(192, 132, 252, 0.15) 0 20px 30px -10px;
+  }
+}
