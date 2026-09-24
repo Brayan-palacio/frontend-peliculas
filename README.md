@@ -9,7 +9,7 @@ Proyecto desarrollados con arquitectura desacoplada (Full-Stack).
 * **Despliegue:** Netlify (Frontend) & Render (Backend)
 
 ## 🌐 Enlaces Públicos
-* **Frontend:** [Ver App en Netlify](cineflixv1.netlify.app)
+* **Frontend:** [Ver App en Netlify](https://cineflixv1.netlify.app/media)
 * **Backend API:** [Ver API en Render](https://api-peliculas-dfhd.onrender.com)
 
 ## 🛠️ Instalación Local
